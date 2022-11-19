@@ -11,7 +11,9 @@ const app = express()
 
 const corsOptions ={
   origin: [
-    '*'
+    'http://localhost:3000',
+    'https://renderfrontend.onrender.com' ,
+    'https://renderfrontend.vercel.app/'
   ] ,
   
 }
@@ -30,6 +32,7 @@ app.use((req, res, next) => {
 app.use('/api/workouts', workoutRoutes)
 app.use('/api/user', userRoutes)
 
+app.get('/' , res.send('hello'))
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
