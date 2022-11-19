@@ -5,20 +5,13 @@ const mongoose = require('mongoose')
 const workoutRoutes = require('./routes/workouts')
 const userRoutes = require('./routes/user')
 const cors = require('cors')
+const corsOptions = require('./config/corsOptions')
 
 // express app
 const app = express()
 
-const corsOptions ={
-  origin : [
-    'http://localhost:3000',
-    'https://renderfrontend.onrender.com' ,
-    'https://renderfrontend.vercel.app/'
-  ] ,
-  Credential : true
-}
 
-app.options('*', cors(corsOptions)) // include before other routes
+app.use(cors(corsOptions))
 
 // middleware
 app.use(express.json())
