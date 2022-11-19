@@ -11,15 +11,14 @@ const app = express()
 
 const corsOptions ={
   origin : [
-    "*"
-    // 'http://localhost:3000',
-    // 'https://renderfrontend.onrender.com' ,
-    // 'https://renderfrontend.vercel.app/'
+    'http://localhost:3000',
+    'https://renderfrontend.onrender.com' ,
+    'https://renderfrontend.vercel.app/'
   ] ,
   Credential : true
 }
 
-app.use(cors(corsOptions))
+app.options('*', cors(corsOptions)) // include before other routes
 
 // middleware
 app.use(express.json())
