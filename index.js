@@ -15,7 +15,7 @@ const corsOptions ={
     'https://renderfrontend.onrender.com' ,
     'https://renderfrontend.vercel.app/'
   ] ,
-  
+  Credential : true
 }
 
 app.use(cors(corsOptions))
