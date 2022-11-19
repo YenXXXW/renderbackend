@@ -9,9 +9,11 @@ const cors = require('cors')
 // express app
 const app = express()
 
-app.use(cors({
-  origin : "https://renderfrontend.onrender.com"
-}))
+const corsOptions ={
+  origin: 'https://renderfrontend.onrender.com/',
+}
+
+app.use(cors(corsOptions))
 
 // middleware
 app.use(express.json())
